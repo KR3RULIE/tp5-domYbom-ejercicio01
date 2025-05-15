@@ -3,12 +3,15 @@ const numeroAleatorio = () => {
 };
 const comenzarJuego = () => {
   const parrafo = document.getElementsByTagName("p");
+  document.getElementById("numero").disabled = false;
+  const btnEnviar = document.getElementsByClassName("btn-primary")[0];
   console.log(numAleatorio);
   if (borrarParrafo) {
     parrafo[0].classList.remove(`d-none`);
     borrarParrafo = false;
   }
   btnComenzarJuego.classList.add("disabled");
+  btnEnviar.classList.remove("disabled");
 };
 
 const asDelNumero = (e) => {
