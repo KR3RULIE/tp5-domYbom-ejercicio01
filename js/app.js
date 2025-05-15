@@ -2,10 +2,8 @@ const numeroAleatorio = () => {
   return Math.round(Math.random() * 10 + 1);
 };
 const comenzarJuego = () => {
-  console.log("Desde la funciona comenzar juego");
   const parrafo = document.getElementsByTagName("p");
-  numeroAleatorio();
-  console.log(numeroAleatorio());
+  console.log(numAleatorio);
   if (borrarParrafo) {
     parrafo[0].classList.remove(`d-none`);
     borrarParrafo = false;
@@ -15,17 +13,29 @@ const comenzarJuego = () => {
 
 const asDelNumero = (e) => {
   e.preventDefault();
-  console.log("Desde la funciona asDelNumero");
-  const numeroDelUsuario = document.getElementById("numero").value;
-  if (numeroAleatorio() === numeroDelUsuario) {
-    alert("Enhorabuena lo as adivinado")
+  const numeroDelUsuario = parseInt(document.getElementById("numero").value);
+  const div = document.getElementsByTagName("div");
+  if (numAleatorio === numeroDelUsuario) {
+    alert("😱 Enhorabuena, lo has adivinado 😨");
+    div[3].classList.remove("d-none");
+  } else if (numeroDelUsuario > numAleatorio) {
+    alert("Un poco menos 😆");
+  } else {
+    alert("Un poco mas 😜");
   }
+  btnEnviarNumero.reset();
+};
+
+const reiniciarElJuego = () => {
+  location.reload();
 };
 // Variables
 const btnComenzarJuego = document.querySelector(".btn-outline-warning");
 const btnEnviarNumero = document.getElementById("formEnviar");
+const btnReiniciarJuego = document.querySelector(".btn-outline-info");
 let borrarParrafo = true;
-
+const numAleatorio = numeroAleatorio();
 // Manejador de eventos
 btnComenzarJuego.addEventListener(`click`, comenzarJuego);
 btnEnviarNumero.addEventListener("submit", asDelNumero);
+btnReiniciarJuego.addEventListener("click", reiniciarElJuego);
