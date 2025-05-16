@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,8 +22,44 @@
     <title>tp5-DOM y BOM : Ejercicio01</title>
   </head>
   <body>
-    <main></main>
-    <script src=""></script>
+    <main>
+      <h1 class="text-center mt-4 estilo">As del numero🎮</h1>
+      <div class="d-flex justify-content-center my-4">
+        <button type="button" class="btn btn-outline-warning">
+          Comenzar el juego
+        </button>
+      </div>
+      <p class="text-center d-none estilo">
+        Se a generado un numero aleatorio entre 1 y 10, intenta adivinarlo!
+      </p>
+      <div class="d-flex justify-content-center align-items-center">
+        <form
+          id="formEnviar"
+          class="d-flex flex-column align-items-center w-25"
+        >
+          <div class="mb-3 w-100 text-center">
+            <label for="numero" class="form-label">Ingresa el numero</label>
+            <input
+              type="number"
+              class="form-control"
+              id="numero"
+              aria-describedby="emailHelp"
+              min="1"
+              max="10"
+              required
+              disabled
+            />
+          </div>
+          <button type="submit" class="btn btn-primary disabled">Enviar</button>
+        </form>
+      </div>
+      <div class="d-flex justify-content-center d-none my-4">
+        <button type="button" class="btn btn-outline-info">
+          Reiniciar juego
+        </button>
+      </div>
+    </main>
+    <script src="./js/app.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
